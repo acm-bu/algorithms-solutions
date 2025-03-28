@@ -11,6 +11,8 @@
         python3
         pyright
         poetry
+
+        bun
       ];
     };
   };
