@@ -13,7 +13,6 @@ export function buildSolutions(rootDir: string): Solution[] {
 
     for (const username of users) {
       const solutionDir = path.join(problemDir, username); 
-      console.log("solutionDir: ", solutionDir);
       const solution: Solution = {
         user: username,
         problem: problemName,
@@ -41,7 +40,7 @@ export function buildSolutions(rootDir: string): Solution[] {
           });
         }
       }
-
+      console.log(` Built solution ${solutionDir}`);
       solutions.push(solution);
     }
 
@@ -60,8 +59,9 @@ export function buildMeetings(meetingsDirectory: string): Meeting[] {
     const text = fs.readFileSync(filepath);
     meetings.push({
       text: text.toString(),
-      date: date,
-    })
+      date: date.toUTCString(),
+    });
+    console.log(`  Built meeting ${filepath}`);
   }
 
   return meetings

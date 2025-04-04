@@ -1,6 +1,6 @@
 export type Markdown = string;
 
-type Language =
+export type Language =
   | "Unknown"
   | "TypeScript"
   | "JavaScript"
@@ -49,5 +49,5 @@ export interface Solution {
 
 export interface Meeting {
   text: Markdown;
-  date: Date;
+  date: string;
 }
