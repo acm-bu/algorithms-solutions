@@ -10,6 +10,7 @@
     "content": "bun run scripts/build-content.ts"
   },
   "dependencies": {
+    "daisyui": "^5.0.12",
     "marked": "^15.0.7",
     "next": "15.2.4",
     "react": "^19.0.0",
