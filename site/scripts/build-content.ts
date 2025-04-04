@@ -1,13 +1,13 @@
-import { buildProblems } from "@/lib/build";
+import { buildMeetings, buildSolutions } from "@/lib/build";
 import path from "path";
-
 
 
 const rootPath = path.resolve(__dirname, "../..");
 
 const meetingsDirectory = path.join(rootPath, "meetings");
-const problemsDirectory = path.join(rootPath, "solutions");
+const solutionsDirectory = path.join(rootPath, "solutions");
 
-buildSolutions(problemsDirectory);
+const solutions = buildSolutions(solutionsDirectory);
+const meetings = buildMeetings(meetingsDirectory);
 
-console.log(meetingsDirectory, problemsDirectory);
+console.log(meetings);

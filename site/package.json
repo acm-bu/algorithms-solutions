@@ -10,9 +10,10 @@
     "content": "bun run scripts/build-content.ts"
   },
   "dependencies": {
+    "marked": "^15.0.7",
+    "next": "15.2.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "typescript": "^5",
