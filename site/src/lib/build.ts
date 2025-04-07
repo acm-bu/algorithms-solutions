@@ -59,7 +59,7 @@ export function buildMeetings(meetingsDirectory: string): Meeting[] {
     const text = fs.readFileSync(filepath);
     meetings.push({
       text: text.toString(),
-      date: date.toUTCString(),
+      date: date,
     });
     console.log(`  Built meeting ${filepath}`);
   }
@@ -77,7 +77,7 @@ function getExtension(filename: string): string {
 
 }
 
-function parseMeetingFilename(filename: string): Date {
+function parseMeetingFilename(filename: string): string {
   const extSplit = filename.split(".");
   if (extSplit.length !== 2) {
     throw new Error(`Failed parsing ${filename} as meeting (split != 2)`);
@@ -90,19 +90,6 @@ function parseMeetingFilename(filename: string): Date {
     throw new Error(`Failed parsing ${filename} as meeting (date split != 3)`);
   }
 
-  const date = new Date();
-  const y = parseInt(dateSplit[0]);
-  const m = parseInt(dateSplit[1]);
-  const d = parseInt(dateSplit[2]);
-
-  if (isNaN(y) || isNaN(d) || isNaN(m)) {
-    throw new Error(`Failed parsing ${filename} as meeting (got NaN)`);
-  }
-
-  date.setUTCFullYear(y);
-  // january is 0
-  date.setUTCMonth(m - 1);
-  date.setUTCDate(d);
-
-  return date;
+  return datestring;
 }
+

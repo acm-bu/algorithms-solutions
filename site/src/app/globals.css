@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui" {}
+
+
+/* Copied from aother project */
+
+@plugin "daisyui/theme" {
+  name: "railgun-dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(14% 0.004 49.25);
+  --color-base-200: oklch(21% 0.006 56.043);
+  --color-base-300: oklch(26% 0.007 34.298);
+  --color-base-content: oklch(100% 0 0);
+  --color-primary: oklch(55% 0.195 38.402);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(54% 0.281 293.009);
+  --color-secondary-content: oklch(98% 0.026 102.212);
+  --color-accent: oklch(60% 0.118 184.704);
+  --color-accent-content: oklch(97% 0.014 343.198);
+  --color-neutral: oklch(44% 0.043 257.281);
+  --color-neutral-content: oklch(98% 0.003 247.858);
+  --color-info: oklch(48% 0.243 264.376);
+  --color-info-content: oklch(93% 0.032 255.585);
+  --color-success: oklch(84% 0.238 128.85);
+  --color-success-content: oklch(26% 0.051 172.552);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(27% 0.077 45.635);
+  --color-error: oklch(50% 0.213 27.518);
+  --color-error-content: oklch(94% 0.028 342.258);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@plugin "daisyui/theme" {
+  name: "railgun-light";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(92% 0.013 255.508);
+  --color-base-200: oklch(96% 0.007 247.896);
+  --color-base-300: oklch(98% 0.003 247.858);
+  --color-base-content: oklch(0% 0 0);
+  --color-primary: oklch(55% 0.195 38.402);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(54% 0.281 293.009);
+  --color-secondary-content: oklch(98% 0.026 102.212);
+  --color-accent: oklch(60% 0.118 184.704);
+  --color-accent-content: oklch(97% 0.014 343.198);
+  --color-neutral: oklch(44% 0.043 257.281);
+  --color-neutral-content: oklch(98% 0.003 247.858);
+  --color-info: oklch(48% 0.243 264.376);
+  --color-info-content: oklch(93% 0.032 255.585);
+  --color-success: oklch(84% 0.238 128.85);
+  --color-success-content: oklch(26% 0.051 172.552);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(27% 0.077 45.635);
+  --color-error: oklch(50% 0.213 27.518);
+  --color-error-content: oklch(94% 0.028 342.258);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+.link {
+  @apply text-primary transition-all;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.link:hover {
+  filter: brightness(120%);
+}
+
+.content a {
+  @apply text-primary transition-all
+}
+
+.content h1 {
+  @apply text-3xl my-12
+}
+
+.content h2 {
+  @apply text-2xl my-10
+}
+
+.content h3 {
+  @apply text-2xl my-8
+}
+
+.content h3 {
+  @apply text-2xl my-8
+}
+
+.content ol {
+  @apply list-decimal ml-6 my-4
+}
+
+.content ul {
+  @apply list-disc ml-6 my-4
+}
+
+.content pre {
+  @apply my-4 p-4 rounded-lg bg-base-300
+}
+
+.content p {
+  @apply my-4 text-base
 }
